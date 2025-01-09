@@ -8,4 +8,10 @@ async function fetchProducts() {
   console.log(data);
 }
 
-fetchProducts();
+async function fetchProductById(id) {
+  const response = await fetch("http://localhost:3333/products");
+  const data = await response.json();
+  console.log(data);
+}
+
+fetchProductById("1");
