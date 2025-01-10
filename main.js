@@ -14,4 +14,13 @@ async function fetchProductById(id) {
   console.log(data);
 }
 
-fetchProductById("1");
+// fetchProductById("1");
+
+const name = document.getElementById("name");
+const price = document.getElementById("price");
+const form = document.getElementById("form");
+
+addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("ENVIANDO...");
+});
