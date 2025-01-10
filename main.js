@@ -20,7 +20,18 @@ const name = document.getElementById("name");
 const price = document.getElementById("price");
 const form = document.getElementById("form");
 
-addEventListener("submit", (event) => {
+addEventListener("submit", async (event) => {
   event.preventDefault();
-  console.log("ENVIANDO...");
+
+  fetch("http://localhost:3333/products", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JASON.stringify({
+      id: new Date().getTime().toString(),
+      name: productName.value,
+      price: productPrice.value,
+    }),
+  });
 });
